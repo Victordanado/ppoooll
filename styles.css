@@ -56,8 +56,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, in
     outline: none;
 }
 
-/* Estilo para o botão de envio */
-.btn-submit {
+/* Estilo para os botões */
+.btn-submit, .btn-continuar {
     background-color: #007BFF;
     color: #fff;
     border: none;
@@ -69,6 +69,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, in
     transition: background-color 0.3s ease;
 }
 
-.btn-submit:hover {
+.btn-submit:hover, .btn-continuar:hover {
     background-color: #0056b3;
+}
+
+#btnContinuar {
+    margin-top: 10px;
+    background-color: #28a745;
 }
