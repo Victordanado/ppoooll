@@ -1,16 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Banco Virtual</title>
+
+<style>
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+}
+
+.container{
+    background:#1e293b;
+    width:400px;
+    margin:auto;
+    padding:20px;
+    border-radius:10px;
+}
+
+button{
+    background:#2563eb;
+    border:none;
+    padding:10px;
+    margin:5px;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+input{
+    padding:8px;
+    margin:10px;
+}
+
+#historico{
+    background:#020617;
+    padding:10px;
+    margin-top:15px;
+    height:150px;
+    overflow-y:auto;
+}
+</style>
 </head>
+
 <body>
-    <div class="form-container">
-        <h2>Bem-vindo!</h2>
-        <p>Aqui você pode iniciar um novo cadastro ou realizar outras ações.</p>
-        <!-- Outros conteúdos ou novos formulários podem ser inseridos aqui -->
-    </div>
+
+<h1>🏦 Banco Virtual</h1>
+
+<div class="container">
+
+<h2>Saldo: R$ <span id="saldo">0</span></h2>
+
+<input type="number" id="valor" placeholder="Digite o valor">
+
+<br>
+
+<button onclick="depositar()">Depositar</button>
+<button onclick="debitar()">Debitar</button>
+
+<h3>Histórico</h3>
+
+<div id="historico"></div>
+
+</div>
+
+<script>
+
+let saldo = localStorage.getItem("saldoBanco");
+
+if(saldo == null){
+    saldo = 1000;
+}
+
+saldo = Number(saldo);
+
+let historico = JSON.parse(localStorage.getItem("historicoBanco")) || [];
+
+function atualizarTela(){
+    document.getElementById("saldo").innerText = saldo;
+
+    let h = document.getElementById("historico");
+    h.innerHTML = "";
+
+    historico.forEach(item=>{
+        let p = document.createElement("p");
+        p.innerText = item;
+        h.appendChild(p);
+    });
+
+    localStorage.setItem("saldoBanco", saldo);
+    localStorage.setItem("historicoBanco", JSON.stringify(historico));
+}
+
+function depositar(){
+    let valor = Number(document.getElementById("valor").value);
+
+    if(valor > 0){
+        saldo += valor;
+        historico.unshift("💰 Depósito de R$ "+valor);
+        atualizarTela();
+    }
+}
+
+function debitar(){
+    let valor = Number(document.getElementById("valor").value);
+
+    if(valor > 0 && saldo >= valor){
+        saldo -= valor;
+        historico.unshift("💸 Débito de R$ "+valor);
+        atualizarTela();
+    }else{
+        alert("Saldo insuficiente");
+    }
+}
+
+atualizarTela();
+
+</script>
+
 </body>
 </html>
