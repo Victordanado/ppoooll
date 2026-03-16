@@ -16,47 +16,51 @@
 
 <div class="app">
 
-<header class="topo">
-
 <h1>🏦 Banco Virtual</h1>
-
-</header>
 
 <div class="cartao">
 
 <p>Saldo disponível</p>
 
-<h2 id="saldo">R$ 2.500,00</h2>
-
-<button class="verSaldo">👁 Mostrar / esconder</button>
+<h2 id="saldo">R$ 2.500</h2>
 
 </div>
 
-<div class="menu">
+<div class="acoes">
 
-<button>💰 Depositar</button>
-<button>💸 Pagar</button>
-<button>🔁 Transferir</button>
-<button>📊 Extrato</button>
+<button>
+<img src="https://img.icons8.com/ios-filled/50/ffffff/money.png">
+Depositar
+</button>
+
+<button>
+<img src="https://img.icons8.com/ios-filled/50/ffffff/send-money.png">
+Transferir
+</button>
+
+<button>
+<img src="https://img.icons8.com/ios-filled/50/ffffff/bank-card-back-side.png">
+Cartão
+</button>
+
+<button>
+<img src="https://img.icons8.com/ios-filled/50/ffffff/receipt.png">
+Extrato
+</button>
 
 </div>
 
-<div class="historico">
+<div class="graficoArea">
 
-<h3>Histórico</h3>
+<h3>Gastos do mês</h3>
 
-<ul>
-
-<li>Pix recebido + R$300</li>
-<li>Compra online - R$120</li>
-<li>Transferência enviada - R$50</li>
-
-</ul>
+<canvas id="grafico"></canvas>
 
 </div>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
 
 </body>

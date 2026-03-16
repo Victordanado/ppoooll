@@ -4,43 +4,29 @@ margin:0;
 font-family:Arial;
 background:linear-gradient(135deg,#1e1b4b,#020617);
 color:white;
+text-align:center;
 
 }
-
-/* estrutura */
 
 .app{
 
 max-width:420px;
 margin:auto;
+padding:20px;
 
 }
-
-/* topo */
-
-.topo{
-
-background:linear-gradient(90deg,#9333ea,#7c3aed);
-padding:25px;
-text-align:center;
-box-shadow:0 10px 20px rgba(0,0,0,0.5);
-
-}
-
-/* cartão */
 
 .cartao{
 
-margin:30px 20px;
+background:linear-gradient(135deg,#9333ea,#4c1d95);
+
 padding:30px;
 
 border-radius:20px;
 
-background:linear-gradient(135deg,#9333ea,#4c1d95);
-
 box-shadow:0 20px 40px rgba(0,0,0,0.6);
 
-animation:aparecer 1s;
+margin-bottom:30px;
 
 }
 
@@ -50,136 +36,66 @@ font-size:40px;
 
 }
 
-/* botão saldo */
-
-.verSaldo{
-
-margin-top:10px;
-
-background:#111827;
-
-border:none;
-
-color:white;
-
-padding:10px 15px;
-
-border-radius:10px;
-
-cursor:pointer;
-
-}
-
-/* menu */
-
-.menu{
+.acoes{
 
 display:grid;
 
 grid-template-columns:1fr 1fr;
 
-gap:10px;
+gap:15px;
 
-padding:20px;
+margin-bottom:30px;
 
 }
 
-.menu button{
-
-padding:20px;
-
-border:none;
-
-border-radius:15px;
+.acoes button{
 
 background:#111827;
 
+border:none;
+
 color:white;
 
-font-size:16px;
+padding:15px;
+
+border-radius:15px;
 
 cursor:pointer;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:10px;
 
 transition:0.3s;
 
 }
 
-.menu button:hover{
+.acoes button img{
+
+width:28px;
+
+}
+
+.acoes button:hover{
 
 background:#9333ea;
 
 transform:scale(1.05);
 
-box-shadow:0 10px 20px rgba(0,0,0,0.6);
-
 }
 
-/* histórico */
-
-.historico{
+.graficoArea{
 
 background:#020617;
-
-margin:20px;
 
 padding:20px;
 
 border-radius:15px;
 
 box-shadow:0 10px 20px rgba(0,0,0,0.6);
-
-}
-
-.historico ul{
-
-list-style:none;
-
-padding:0;
-
-}
-
-.historico li{
-
-padding:10px;
-
-border-bottom:1px solid #1f2937;
-
-}
-
-/* animação */
-
-@keyframes aparecer{
-
-from{
-
-opacity:0;
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-/* responsividade */
-
-@media(max-width:500px){
-
-.cartao h2{
-
-font-size:32px;
-
-}
-
-.menu{
-
-grid-template-columns:1fr;
-
-}
 
 }

@@ -1,21 +1,37 @@
-let saldo = document.getElementById("saldo")
+const ctx = document.getElementById('grafico');
 
-let visivel = true
+new Chart(ctx, {
+type: 'doughnut',
 
-document.querySelector(".verSaldo").onclick = function(){
+data: {
 
-if(visivel){
+labels: ['Comida', 'Compras', 'Transporte', 'Outros'],
 
-saldo.innerText = "••••••"
+datasets: [{
 
-visivel = false
+data: [400, 300, 150, 100],
 
-}else{
+backgroundColor: [
+'#9333ea',
+'#3b82f6',
+'#22c55e',
+'#ef4444'
+]
 
-saldo.innerText = "R$ 2.500,00"
+}]
 
-visivel = true
+},
 
+options: {
+
+plugins:{
+legend:{
+labels:{
+color:"white"
+}
+}
 }
 
 }
+
+});
