@@ -1,76 +1,81 @@
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(135deg,#0f172a,#020617);
-    color:white;
-    text-align:center;
+margin:0;
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
 }
 
-h1{
-    background:#020617;
-    padding:20px;
-    margin:0;
-    border-bottom:3px solid #22c55e;
+.topo{
+background:#7c3aed;
+padding:20px;
 }
 
-.container{
-    width:400px;
-    margin:50px auto;
-    background:#111827;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 0 20px rgba(0,0,0,0.6);
+.cartao{
+width:350px;
+margin:40px auto;
+background:linear-gradient(135deg,#9333ea,#6d28d9);
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-#saldo{
-    color:#22c55e;
-    font-size:28px;
-    font-weight:bold;
+.tituloSaldo{
+opacity:0.8;
+}
+
+.saldo{
+font-size:40px;
+margin-top:10px;
+}
+
+.acoes{
+margin-top:20px;
 }
 
 input{
-    width:80%;
-    padding:10px;
-    border:none;
-    border-radius:6px;
-    margin:10px;
-    background:#020617;
-    color:white;
+padding:10px;
+border:none;
+border-radius:8px;
+margin-bottom:10px;
 }
 
 button{
-    padding:10px 15px;
-    margin:5px;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-button:hover{
-    transform:scale(1.05);
+padding:10px 15px;
+border:none;
+border-radius:10px;
+margin:5px;
+cursor:pointer;
+font-weight:bold;
 }
 
 .depositar{
-    background:#22c55e;
-    color:black;
+background:#22c55e;
+color:black;
 }
 
 .debitar{
-    background:#ef4444;
+background:#ef4444;
+}
+
+.transferir{
+background:#3b82f6;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.historicoBox{
+width:350px;
+margin:30px auto;
+background:#020617;
+padding:20px;
+border-radius:15px;
 }
 
 #historico{
-    margin-top:20px;
-    background:#020617;
-    padding:15px;
-    border-radius:8px;
-    height:150px;
-    overflow-y:auto;
-    text-align:left;
-}
-
-#historico p{
-    border-bottom:1px solid #1f2937;
-    padding:5px;
+text-align:left;
+max-height:150px;
+overflow-y:auto;
 }
