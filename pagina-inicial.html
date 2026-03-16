@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
-<title>Banco Virtual</title>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Banco Virtual</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -12,35 +14,46 @@
 
 <body>
 
-<div class="topo">
-<h1>Banco Virtual</h1>
-</div>
+<div class="app">
+
+<header class="topo">
+
+<h1>🏦 Banco Virtual</h1>
+
+</header>
 
 <div class="cartao">
 
-<p class="tituloSaldo">Saldo disponível</p>
+<p>Saldo disponível</p>
 
-<h2 class="saldo">R$ <span id="saldo">2500</span></h2>
+<h2 id="saldo">R$ 2.500,00</h2>
 
-</div>
-
-<div class="acoes">
-
-<input type="number" id="valor" placeholder="Digite o valor">
-
-<button class="depositar" onclick="depositar()">Depositar</button>
-
-<button class="debitar" onclick="debitar()">Debitar</button>
-
-<button class="transferir" onclick="transferir()">Transferir</button>
+<button class="verSaldo">👁 Mostrar / esconder</button>
 
 </div>
 
-<div class="historicoBox">
+<div class="menu">
+
+<button>💰 Depositar</button>
+<button>💸 Pagar</button>
+<button>🔁 Transferir</button>
+<button>📊 Extrato</button>
+
+</div>
+
+<div class="historico">
 
 <h3>Histórico</h3>
 
-<div id="historico"></div>
+<ul>
+
+<li>Pix recebido + R$300</li>
+<li>Compra online - R$120</li>
+<li>Transferência enviada - R$50</li>
+
+</ul>
+
+</div>
 
 </div>
 
