@@ -1,1 +1,76 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#0f172a,#020617);
+    color:white;
+    text-align:center;
+}
 
+h1{
+    background:#020617;
+    padding:20px;
+    margin:0;
+    border-bottom:3px solid #22c55e;
+}
+
+.container{
+    width:400px;
+    margin:50px auto;
+    background:#111827;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+#saldo{
+    color:#22c55e;
+    font-size:28px;
+    font-weight:bold;
+}
+
+input{
+    width:80%;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    margin:10px;
+    background:#020617;
+    color:white;
+}
+
+button{
+    padding:10px 15px;
+    margin:5px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.depositar{
+    background:#22c55e;
+    color:black;
+}
+
+.debitar{
+    background:#ef4444;
+}
+
+#historico{
+    margin-top:20px;
+    background:#020617;
+    padding:15px;
+    border-radius:8px;
+    height:150px;
+    overflow-y:auto;
+    text-align:left;
+}
+
+#historico p{
+    border-bottom:1px solid #1f2937;
+    padding:5px;
+}
