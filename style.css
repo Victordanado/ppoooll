@@ -1,81 +1,185 @@
 body{
+
 margin:0;
 font-family:Arial;
-background:#0f172a;
+background:linear-gradient(135deg,#1e1b4b,#020617);
 color:white;
-text-align:center;
+
 }
+
+/* estrutura */
+
+.app{
+
+max-width:420px;
+margin:auto;
+
+}
+
+/* topo */
 
 .topo{
-background:#7c3aed;
-padding:20px;
+
+background:linear-gradient(90deg,#9333ea,#7c3aed);
+padding:25px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.5);
+
 }
+
+/* cartão */
 
 .cartao{
-width:350px;
-margin:40px auto;
-background:linear-gradient(135deg,#9333ea,#6d28d9);
+
+margin:30px 20px;
 padding:30px;
+
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+
+background:linear-gradient(135deg,#9333ea,#4c1d95);
+
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+
+animation:aparecer 1s;
+
 }
 
-.tituloSaldo{
-opacity:0.8;
-}
+.cartao h2{
 
-.saldo{
 font-size:40px;
+
+}
+
+/* botão saldo */
+
+.verSaldo{
+
 margin-top:10px;
-}
 
-.acoes{
-margin-top:20px;
-}
+background:#111827;
 
-input{
-padding:10px;
 border:none;
-border-radius:8px;
-margin-bottom:10px;
-}
 
-button{
+color:white;
+
 padding:10px 15px;
-border:none;
+
 border-radius:10px;
-margin:5px;
+
 cursor:pointer;
-font-weight:bold;
+
 }
 
-.depositar{
-background:#22c55e;
-color:black;
-}
+/* menu */
 
-.debitar{
-background:#ef4444;
-}
+.menu{
 
-.transferir{
-background:#3b82f6;
-}
+display:grid;
 
-button:hover{
-transform:scale(1.05);
-}
+grid-template-columns:1fr 1fr;
 
-.historicoBox{
-width:350px;
-margin:30px auto;
-background:#020617;
+gap:10px;
+
 padding:20px;
-border-radius:15px;
+
 }
 
-#historico{
-text-align:left;
-max-height:150px;
-overflow-y:auto;
+.menu button{
+
+padding:20px;
+
+border:none;
+
+border-radius:15px;
+
+background:#111827;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.menu button:hover{
+
+background:#9333ea;
+
+transform:scale(1.05);
+
+box-shadow:0 10px 20px rgba(0,0,0,0.6);
+
+}
+
+/* histórico */
+
+.historico{
+
+background:#020617;
+
+margin:20px;
+
+padding:20px;
+
+border-radius:15px;
+
+box-shadow:0 10px 20px rgba(0,0,0,0.6);
+
+}
+
+.historico ul{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.historico li{
+
+padding:10px;
+
+border-bottom:1px solid #1f2937;
+
+}
+
+/* animação */
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* responsividade */
+
+@media(max-width:500px){
+
+.cartao h2{
+
+font-size:32px;
+
+}
+
+.menu{
+
+grid-template-columns:1fr;
+
+}
+
 }
