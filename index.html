@@ -1,167 +1,179 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Cliente</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banco Virtual</title>
 
-    <style>
-    /* Resetando estilos padrão */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+<style>
 
-    /* Estilos para o body e o layout geral */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .form-container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 500px;
-    }
+/* BASE */
+body{
+font-family: 'Segoe UI', Arial, sans-serif;
+background:#f5f7fa;
+color:#1f2937;
+}
 
-    h2 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 20px;
-    }
+/* TOPO */
+.topo{
+background:#1e3a8a;
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    /* Estilos para os campos do formulário */
-    .input-group {
-        margin-bottom: 15px;
-    }
+.logo{
+font-weight:bold;
+font-size:20px;
+letter-spacing:1px;
+}
 
-    label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #555;
-    }
+/* BOTÃO */
+.topo button{
+background:#10b981;
+border:none;
+padding:10px 20px;
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
 
-    input[type="text"], input[type="email"], input[type="tel"], input[type="date"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 14px;
-        color: #333;
-    }
+/* CARDS */
+.cards{
+display:flex;
+gap:20px;
+padding:30px;
+flex-wrap:wrap;
+}
 
-    input:focus {
-        border-color: #007BFF;
-        outline: none;
-    }
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+flex:1;
+min-width:200px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
 
-    /* Estilo para os botões */
-    .btn-submit, .btn-continuar {
-        background-color: #007BFF;
-        color: #fff;
-        border: none;
-        padding: 10px 15px;
-        font-size: 16px;
-        width: 100%;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
+.card h2{
+margin-top:10px;
+}
 
-    .btn-submit:hover, .btn-continuar:hover {
-        background-color: #0056b3;
-    }
+/* CORES */
+.verde{
+color:#10b981;
+}
 
-    #btnContinuar {
-        margin-top: 10px;
-        background-color: #28a745;
-    }
-    </style>
+.vermelho{
+color:#ef4444;
+}
+
+/* TABELA */
+.tabela{
+padding:30px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+overflow:hidden;
+}
+
+th{
+text-align:left;
+background:#f1f5f9;
+padding:15px;
+font-size:14px;
+}
+
+td{
+padding:15px;
+border-bottom:1px solid #eee;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+.cards{
+flex-direction:column;
+}
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="form-container">
-    <h2>Cadastro de Cliente</h2>
+<header class="topo">
+<div class="logo">🏦 Banco Virtual</div>
+<button>Nova Transação</button>
+</header>
 
-    <form id="formCadastro">
+<div class="cards">
 
-        <div class="input-group">
-            <label for="nome">Nome Completo:</label>
-            <input type="text" id="nome" required>
-        </div>
+<div class="card">
+<p>Entradas</p>
+<h2 class="verde">R$ 14.500</h2>
+</div>
 
-        <div class="input-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" required>
-        </div>
+<div class="card">
+<p>Saídas</p>
+<h2 class="vermelho">R$ 1.680</h2>
+</div>
 
-        <div class="input-group">
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" required>
-        </div>
-
-        <div class="input-group">
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" required>
-        </div>
-
-        <div class="input-group">
-            <label for="data_nascimento">Data de Nascimento:</label>
-            <input type="date" id="data_nascimento" required>
-        </div>
-
-        <button type="submit" class="btn-submit">Cadastrar</button>
-
-    </form>
-
-    <button id="btnContinuar" class="btn-continuar">Continuar</button>
+<div class="card">
+<p>Total</p>
+<h2>R$ 12.820</h2>
+</div>
 
 </div>
 
-<script>
-// Função para salvar os dados do formulário no localStorage
-document.getElementById('formCadastro').addEventListener('submit', function(event) {
-    event.preventDefault();
+<div class="tabela">
 
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const telefone = document.getElementById('telefone').value;
-    const endereco = document.getElementById('endereco').value;
-    const dataNascimento = document.getElementById('data_nascimento').value;
+<table>
 
-    const cliente = {
-        nome: nome,
-        email: email,
-        telefone: telefone,
-        endereco: endereco,
-        dataNascimento: dataNascimento
-    };
+<thead>
+<tr>
+<th>Título</th>
+<th>Valor</th>
+<th>Categoria</th>
+<th>Data</th>
+</tr>
+</thead>
 
-    let clientes = JSON.parse(localStorage.getItem('clientes')) || [];
-    clientes.push(cliente);
-    localStorage.setItem('clientes', JSON.stringify(clientes));
+<tbody>
 
-    document.getElementById('formCadastro').reset();
+<tr>
+<td>Dev 30h Job</td>
+<td class="verde">+ R$10.000</td>
+<td>Venda</td>
+<td>12/05</td>
+</tr>
 
-    alert('Cadastro realizado com sucesso!');
-});
+<tr>
+<td>Aluguel</td>
+<td class="vermelho">- R$1.400</td>
+<td>Casa</td>
+<td>14/05</td>
+</tr>
 
-// Redirecionar
-document.getElementById('btnContinuar').addEventListener('click', function() {
-    window.location.href = 'pagina-inicial.html';
-});
-</script>
+</tbody>
+
+</table>
+
+</div>
 
 </body>
 </html>
